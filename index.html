@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Glassmorphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex font-sans">
+
+    <aside class="w-20 border-r border-white/10 flex flex-col items-center py-8 gap-10">
+        <div class="bg-blue-500 p-3 rounded-xl">☁️</div>
+        <div class="opacity-50">📁</div>
+        <div class="opacity-50">🌍</div>
+        <div class="opacity-50">📅</div>
+        <div class="opacity-50">⚙️</div>
+    </aside>
+
+    <main class="flex-1 p-10 bg-slate-800 bg-[url('./Bim.jpeg')] bg-cover bg-center">
+        
+        <header class="flex justify-between items-center mb-20">
+            <div>
+                <p class="text-sm opacity-70">Welcome back</p>
+                <h1 class="text-2xl font-bold">Adam AG</h1>
+            </div>
+            <input type="text" id="search" placeholder="Search city..." class="glass px-6 py-2 rounded-full w-64 placeholder-white/50 focus:outline-none">
+        </header>
+
+        <div id="main-content">
+            <h2 id="weather-desc" class="text-6xl font-bold mb-4">Loading...</h2>
+            <p id="weather-info" class="text-lg opacity-80 max-w-lg"></p>
+        </div>
+
+        <div class="mt-12 glass p-8 rounded-3xl w-96">
+            <h3 class="flex items-center gap-2 mb-4">📍 <span id="city-name">Loading...</span> <span class="text-[10px] bg-blue-500 px-2 py-0.5 rounded">LIVE</span></h3>
+            <h1 class="text-7xl font-bold mb-6" id="temp">--°</h1>
+            <div class="flex justify-between border-t border-white/20 pt-4">
+                <p>🌬️ <span id="wind">--</span> mph</p>
+                <p>💧 <span id="humidity">--</span>%</p>
+                <p>👁️ <span id="visibility">--</span> km</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
